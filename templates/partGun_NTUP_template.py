@@ -9,7 +9,7 @@ process.source.fileNames = cms.untracked.vstring(
     )
 
 from FastSimulation.Event.ParticleFilter_cfi import *
-from RecoLocalCalo.HGCalRecProducers.HGCalRecHit_cfi import dEdX
+from RecoLocalCalo.HGCalRecProducers.HGCalRecHit_cfi import dEdX_weights_v10
 process.ana = cms.EDAnalyzer('HGCalAnalysis',
                              detector = cms.string("all"),
                              inputTag_HGCalMultiCluster = cms.string("DUMMYMULCLUSTAG"),
@@ -23,7 +23,7 @@ process.ana = cms.EDAnalyzer('HGCalAnalysis',
                              storePFCandidates = cms.bool(DUMMYSPFC),
                              recomputePCA = cms.bool(False),
                              includeHaloPCA = cms.bool(True),
-                             dEdXWeights = dEdX,
+                             dEdXWeights = dEdX_weights_v10,
                              layerClusterPtThreshold = cms.double(-1),  # All LayerCluster belonging to a multicluster are saved; this Pt threshold applied to the others
                              TestParticleFilter = ParticleFilterBlock.ParticleFilter
 )

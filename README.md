@@ -4,12 +4,13 @@ Home of the tools to produce samples for HGCAL reconstruction studies
 ## hello world
 
 Set up CMSSW according to https://github.com/CMS-HGCAL/reco-ntuples
+Note:CMSSW_10_6_0_pre4 or later required
 
 Then anywhere,
 ```
 git clone git@github.com:CMS-HGCAL/reco-prodtools.git reco_prodtools
 cd reco_prodtools/templates/python
-./produceSkeletons_D17_NoSmear_NoPU.sh
+./produceSkeletons_D41_VtxSmearedHLLHC_noPU.sh
 cd ../../..
 scram b
 python SubmitHGCalPGun.py --nevts 2 --evtsperjob 1 --queue 1nh --partID 13 --thresholdMin 35 --thresholdMax 35 --gunType E --tag test_${USER}
@@ -29,6 +30,8 @@ For details on the pileup scenario, please see https://github.com/cms-sw/cmssw/b
 | [produceSkeletons_D23_VtxSmearedHLLHC_noPU.sh](templates/python/produceSkeletons_D23_VtxSmearedHLLHC_noPU.sh) | Phase2 | D23 | VtxSmearedHLLHC | none |
 | [produceSkeletons_D28_VtxSmearedHLLHC_noPU.sh](templates/python/produceSkeletons_D28_VtxSmearedHLLHC_noPU.sh) | Phase2C4 | D28 | VtxSmearedHLLHC | none |
 | [produceSkeletons_D30_VtxSmearedHLLHC_noPU.sh](templates/python/produceSkeletons_D30_VtxSmearedHLLHC_noPU.sh) | Phase2C4 | D30 | VtxSmearedHLLHC | none |
+| [produceSkeletons_D41_VtxSmearedHLLHC_noPU.sh](templates/python/produceSkeletons_D41_VtxSmearedHLLHC_noPU.sh) | Phase2C4 | D41 | VtxSmearedHLLHC | none |
+
 
 Whenever you would like to change configuration, change to the `reco_prodtools/templates/python` directory and execute the corresponding script. Then make sure to run `scram b`.
 
